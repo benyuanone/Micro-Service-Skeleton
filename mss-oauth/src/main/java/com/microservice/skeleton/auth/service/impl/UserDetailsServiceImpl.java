@@ -1,4 +1,5 @@
 package com.microservice.skeleton.auth.service.impl;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microservice.skeleton.auth.service.PermissionService;
 import com.microservice.skeleton.auth.service.RoleService;
@@ -7,6 +8,8 @@ import com.microservice.skeleton.common.vo.MenuVo;
 import com.microservice.skeleton.common.vo.Result;
 import com.microservice.skeleton.common.vo.RoleVo;
 import com.microservice.skeleton.common.vo.UserVo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -28,6 +31,8 @@ import java.util.Set;
  */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
+     private static final Logger log = LoggerFactory.getLogger(UserDetailsServiceImpl.class);
+     
     @Autowired
     private UserService userService;
     @Autowired

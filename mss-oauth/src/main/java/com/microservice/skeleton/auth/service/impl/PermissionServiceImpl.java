@@ -4,6 +4,8 @@ import com.microservice.skeleton.auth.service.PermissionService;
 import com.microservice.skeleton.common.vo.MenuVo;
 import com.microservice.skeleton.common.vo.Result;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +20,8 @@ import java.util.List;
 @Slf4j
 @Service
 public class PermissionServiceImpl implements PermissionService {
+     private static final Logger log = LoggerFactory.getLogger(PermissionServiceImpl.class);
+     
     @Override
     public Result<List<MenuVo>> getRolePermission(Integer roleId) {
         log.info("调用{}失败","getRolePermission");

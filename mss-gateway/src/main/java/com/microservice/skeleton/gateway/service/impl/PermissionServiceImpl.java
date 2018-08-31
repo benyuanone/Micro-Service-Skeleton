@@ -2,6 +2,8 @@ package com.microservice.skeleton.gateway.service.impl;
 
 import com.microservice.skeleton.gateway.service.PermissionService;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Service;
@@ -21,7 +23,8 @@ import java.util.List;
 @Service("permissionService")
 @Slf4j
 public class PermissionServiceImpl implements PermissionService {
-
+ private static final Logger log = LoggerFactory.getLogger(PermissionServiceImpl.class);
+ 
     /**
      * 可以做URLs匹配，规则如下
      *
